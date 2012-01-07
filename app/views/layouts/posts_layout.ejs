@@ -7,19 +7,17 @@
 	</head>
 	<body>
 		<div class="container">
-			<% var flash = request.flash('info').pop(); if (flash) { %>
-			<div class="alert-message info">
-				<a class="close" href="#">×</a>
-				<%- flash %>
-			</div>
-			<% } %>
-
-			<% flash = request.flash('error').pop(); if (flash) { %>
-			<div class="flash error">
-				<a class="close" href="#">×</a>
-				<%- flash %>
-			</div>
-			<% }; %>
+			<% [ "info", "error" ].forEach( function( flash_type ) {
+					var flash = request.flash(flash_type).pop();
+					if (flash) {
+			%>
+				<div class="alert-message <%- flash_type %>">
+					<%- flash %>
+					<div class="close flow-right" href="#">×</div>
+				</div>
+			<%  }
+				 });
+			%>
 
 			<%- body %>
 		</div>
