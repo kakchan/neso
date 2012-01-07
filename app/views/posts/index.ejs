@@ -7,14 +7,14 @@
 			<h2 class="blogList-title">
 				<a href="<%= path_to.edit_post(post) %>"><%= post.title %></a>
 			</h2>
+			<div class="blogList-excerpt">
+				<span><%= post.excerpt || "" %></span>
+			</div>
 			<div class="blogList-info">
 				<span>author: <%= post.author || "" %></span>
 				<span>permalink: <%= post.permalink || "" %></span>
 				<span>published on: <%= post.publish_date || "" %></span>
 				<span>published: <%= post.published %></span>
-			</div>
-			<div class="blogList-excerpt">
-				<span><%= post.excerpt || "" %></span>
 			</div>
 		</div>
 		<div class="flow-right">
