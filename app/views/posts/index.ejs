@@ -1,15 +1,23 @@
-<h1>Index of post</h1>
+<h1>Posts</h1>
 
-<div class="list">
+<div class="blogList list">
 	<% posts.forEach(function (post) { %>
-	<div class="list-row clear-floats">
+	<div class="blogList-row list-row clear-floats">
 		<div class="flow-left">
-			Permalink <%= post.permalink %>
-			Title <%= post.title %>
-			Author <%= post.author %>
+			<h2 class="blogList-title">
+				<a href="<%= path_to.edit_post(post) %>"><%= post.title %></a>
+			</h2>
+			<div class="blogList-info">
+				<span>author: <%= post.author || "" %></span>
+				<span>permalink: <%= post.permalink || "" %></span>
+				<span>published on: <%= post.publish_date || "" %></span>
+				<span>published: <%= post.published %></span>
+			</div>
+			<div class="blogList-excerpt">
+				<span><%= post.excerpt || "" %></span>
+			</div>
 		</div>
 		<div class="flow-right">
-			<%- link_to('Edit', path_to.edit_post(post), {class: 'btn primary'}) %>
 			<%- link_to('Delete', path_to.post(post), {class: 'btn danger', method: 'delete', remote: true, jsonp: '(function (u) {location.href = u;})'}) %>
 		</div>
 	</div>
@@ -19,5 +27,5 @@
 <hr/>
 
 <div>
-	<%- link_to('New post', path_to.new_post, {class: 'btn'}) %>
+	<%- link_to('New Post', path_to.new_post, {class: 'btn primary'}) %>
 </div>
