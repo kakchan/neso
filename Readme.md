@@ -4,9 +4,9 @@ Mimas is a simple CMS which is created using Railway. As Railway is using Juggli
 
 Quick Start
 -----------
-  `git clone git://github.com/kakchan/mimas.git && cd mimas`
-  `npm install -d`
-  `node server.js`
+    git clone git://github.com/kakchan/mimas.git && cd mimas
+    npm install -d
+    node server.js
 
 Release 0.0.1 Feature
 ---------------------
