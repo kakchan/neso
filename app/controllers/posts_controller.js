@@ -46,7 +46,7 @@ action(function update() {
 	this.post.updateAttributes(body, function (err) {
 		if (!err) {
 			flash('info', 'Post updated');
-			redirect(path_to.post(this.post));
+			redirect(path_to.posts);
 		} else {
 			flash('error', 'Post can not be updated');
 			this.title = 'Edit post details';

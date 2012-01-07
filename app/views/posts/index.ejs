@@ -5,7 +5,9 @@
 <% posts.forEach(function (post) { %>
 <div class="row">
 	<div class="span-two-thirds">
-		post #<%= post.id %>
+		Permalink <%= post.permalink %>
+		Title <%= post.title %>
+		Author <%= post.author %>
 	</div>
 	<div class="span-one-third">
 		<%- link_to('Edit', path_to.edit_post(post), {class: 'btn primary'}) %>

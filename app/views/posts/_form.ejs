@@ -1,24 +1,8 @@
-<div class="clearfix">
-	<%- form.label("title") %>
-	<div class="input">
-		<%- form.input("title") %>
+<% ["permalink", "title", "content", "published_date", "published"].forEach( function( data_type ) { %>
+	<div class="clearfix">
+		<%- form.label(data_type) %>
+		<div class="input">
+			<%- form.input(data_type) %>
+		</div>
 	</div>
-</div>
-<div class="clearfix">
-	<%- form.label("content") %>
-	<div class="input">
-		<%- form.input("content") %>
-	</div>
-</div>
-<div class="clearfix">
-	<%- form.label("published_date") %>
-	<div class="input">
-		<%- form.input("published_date") %>
-	</div>
-</div>
-<div class="clearfix">
-	<%- form.label("published") %>
-	<div class="input">
-		<%- form.checkbox("published") %>
-	</div>
-</div>
+<% } ); %>
