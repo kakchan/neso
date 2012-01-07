@@ -1,14 +1,10 @@
-<div class="page-header">
-	<h1>Details of post</h1>
-</div>
+<h1>Details of post</h1>
 
 <% ["permalink", "title", "content", "published_date", "published"].forEach( function( data_type ) { %>
-	<div class="clearfix">
-		<%- data_type + ": " + post[ data_type ] %><br/>
-	</div>
+	<%- data_type + ": " + post[ data_type ] %><br/>
 <% } ); %>
 
-<div class="actions">
+<div>
 	<%- link_to('Edit', path_to.edit_post(post), {class: 'btn primary'}) %>
 	<%- link_to('Delete', path_to.post(post), {class: 'btn danger', method: 'delete', remote: true, jsonp: '(function (u) { location.href = u; })'}) %>
 	or

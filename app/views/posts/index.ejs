@@ -1,23 +1,23 @@
-<div class="page-header">
-	<h1>Index of post</h1>
-</div>
+<h1>Index of post</h1>
 
-<% posts.forEach(function (post) { %>
-<div class="row">
-	<div class="span-two-thirds">
-		Permalink <%= post.permalink %>
-		Title <%= post.title %>
-		Author <%= post.author %>
+<div class="list">
+	<% posts.forEach(function (post) { %>
+	<div class="list-row clear-floats">
+		<div class="flow-left">
+			Permalink <%= post.permalink %>
+			Title <%= post.title %>
+			Author <%= post.author %>
+		</div>
+		<div class="flow-right">
+			<%- link_to('Edit', path_to.edit_post(post), {class: 'btn primary'}) %>
+			<%- link_to('Delete', path_to.post(post), {class: 'btn danger', method: 'delete', remote: true, jsonp: '(function (u) {location.href = u;})'}) %>
+		</div>
 	</div>
-	<div class="span-one-third">
-		<%- link_to('Edit', path_to.edit_post(post), {class: 'btn primary'}) %>
-		<%- link_to('Delete', path_to.post(post), {class: 'btn danger', method: 'delete', remote: true, jsonp: '(function (u) {location.href = u;})'}) %>
-	</div>
+	<% }); %>
 </div>
-<% }); %>
 
 <hr/>
 
-<div class="well">
+<div>
 	<%- link_to('New post', path_to.new_post, {class: 'btn'}) %>
 </div>

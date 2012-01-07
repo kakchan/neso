@@ -1,8 +1,15 @@
-<% ["permalink", "title", "content", "published_date", "published"].forEach( function( data_type ) { %>
-	<div class="clearfix">
-		<%- form.label(data_type) %>
-		<div class="input">
-			<%- form.input(data_type) %>
+<% [
+		{ name: "permalink" },
+		{ name: "title" },
+		{ name: "content" },
+		{ name: "published_date" },
+		{ name: "published", type: "checkbox" } ].forEach( function( item ) { %>
+	<div class="list-row clear-floats">
+		<div class="list-cell label-cell">
+			<%- form.label(item.name) %>
+		</div>
+		<div class="list-cell content-cell">
+			<%- form[ item.type || "input" ](item.name) %>
 		</div>
 	</div>
 <% } ); %>

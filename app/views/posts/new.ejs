@@ -1,11 +1,9 @@
-<div class="page-header">
-	<h1>New post</h1>
-</div>
+<h1>New post</h1>
 
 <% form_for(post, {action: path_to.posts, method: 'POST', id: "post_form"}, function (form) { %>
 	<%- partial('posts/form.ejs', {locals: {form: form, post: post}}) %>
-	<div class="actions">
-		<%- form.submit('Create post', {class: 'btn primary'}) %> or
+	<div class="page-actions">
+		<%- form.submit('Create post', {class: 'btn primary'}) %>
 		<%- link_to('Cancel', path_to.posts, {class: 'btn'}) %>
 	</div>
 <% });%>
