@@ -1,5 +1,5 @@
 load('application');
-
+before(use('requireLogin'));
 before(loadPost, {only: ['show', 'edit', 'update', 'destroy']});
 
 action('new', function () {
