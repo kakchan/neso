@@ -12,3 +12,5 @@ Release 0.0.1 Feature
 ---------------------
    - Authentication
    - CRUD posts
+   - CRUD Block Content
+   - User Management
