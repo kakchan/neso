@@ -2,6 +2,21 @@ HTML, BODY { margin:0; padding:0; }
 H1 { border-bottom: 1px solid #666; color: #555; margin: 12px 0; }
 .container { width: 980px; margin: 0 auto; }
 
+/* Shared styles */
+.flow-left { float: left; }
+.flow-right { float: right; }
+.align-right { text-align: right; }
+
+.clear-floats { zoom: 1; }
+.clear-floats:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	overflow: hidden;
+	height: 0px;
+}
+
 /* Fields styles */
 INPUT { width: 280px; padding: 3px 5px; border-radius: 5px; }
 INPUT[type=button], INPUT[type=submit], INPUT[type=checkbox] { width: auto; }
@@ -84,22 +99,13 @@ INPUT[type=button], INPUT[type=submit], INPUT[type=checkbox] { width: auto; }
 /* Page Style */
 .page-actions { border-top: 1px solid #999; padding: 15px 0; margin-top: 15px; }
 
-/* Shared styles */
-.flow-left { float: left; }
-.flow-right { float: right; }
-.align-right { text-align: right; }
+/* Nav List */
+.nav { background-color: #f3f3f3; }
+.nav-list { list-style: none; padding: 0; margin: 0; color: #333; }
+.nav-list-item { float: left; padding: 8px 20px; cursor: pointer; }
+.nav-list-item:hover { background-color: #e3e3e3; }
 
-.clear-floats { zoom: 1; }
-.clear-floats:after {
-	content: ".";
-	display: block;
-	clear: both;
-	visibility: hidden;
-	overflow: hidden;
-	height: 0px;
-}
-
-/* list */
+/* List */
 .list-row { padding: 3px; }
 .label-cell, .content-cell { float: left; }
 .label-cell { width: 130px; padding: 4px 0; }

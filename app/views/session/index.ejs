@@ -1,6 +1,6 @@
 <h1>Logon</h1>
 
-<% form_tag({action: path_to.sessions, method: 'POST', id: "session_form"}, function (form) { %>
+<% form_tag({action: path_to.session, method: 'POST', id: "session_form"}, function (form) { %>
 	<% [{ name: "username", type: "text", label: "Username" },
 			{ name: "password", type: "password", label: "Password" } ].forEach( function( item ) { %>
 		<div class="list-row clear-floats">
