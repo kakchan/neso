@@ -1,4 +1,5 @@
 exports.routes = function (map) {
+	map.resources('users');
 	map.resources('posts');
 	map.resources('sessions');
 	map.get('/', 'sessions#index');

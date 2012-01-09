@@ -1,0 +1,15 @@
+<% [
+		{ name: "username", label: "Username" },
+		{ name: "password", label: "Password", type: "password" },
+		{ name: "confirm_password", label: "Confirm Password", type: "password" },
+		{ name: "full_name", label: "Full Name" },
+		{ name: "email", label: "E-mail" } ].forEach( function( item ) { %>
+	<div class="list-row clear-floats">
+		<div class="list-cell label-cell">
+			<%- item.label %>
+		</div>
+		<div class="list-cell content-cell">
+				<input type="<%= item.type %>" name="<%= item.name %>" value="<%= user[item.name] || "" %>" />
+		</div>
+	</div>
+<% } ); %>

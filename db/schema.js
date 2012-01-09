@@ -14,3 +14,10 @@ var Post = describe('Post', function () {
 	property('published_date', Date);
 	property('published', Boolean);
 });
+
+var User = describe('User', function () {
+	property('username', String);
+	property('password', String);
+	property('full_name', String);
+	property('email', String);
+});

@@ -87,6 +87,7 @@ INPUT[type=button], INPUT[type=submit], INPUT[type=checkbox] { width: auto; }
 /* Shared styles */
 .flow-left { float: left; }
 .flow-right { float: right; }
+.align-right { text-align: right; }
 
 .clear-floats { zoom: 1; }
 .clear-floats:after {
@@ -113,3 +114,6 @@ INPUT[type=button], INPUT[type=submit], INPUT[type=checkbox] { width: auto; }
 .blogList-info { color: #333; }
 .blogList-info SPAN { padding-right: 25px; }
 .blogList-excerpt { color: #222; margin-bottom: 25px; }
+
+/* Users Table */
+.users-table { width: 100%; }

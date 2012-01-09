@@ -1,0 +1,30 @@
+<h1>Users</h1>
+
+<table class="users-table">
+	<thead>
+		<tr>
+			<td>Username</td>
+			<td>Full Name</td>
+			<td>E-mail</td>
+		</tr>
+	</thead>
+	<tbody>
+	<% users.forEach(function (user) { %>
+		<tr>
+			<td><%= user.username %></td>
+			<td><%= user.full_name %></td>
+			<td><%= user.email %></td>
+			<td class="align-right">
+				<%- link_to('Edit', path_to.edit_user(user), {class: 'btn primary'}) %>
+				<%- link_to('Delete', path_to.user(user), {class: 'btn danger', method: 'delete', remote: true, jsonp: '(function (u) {location.href = u;})'}) %>
+			</td>
+		</tr>
+	<% }); %>
+	</tbody>
+</table>
+
+<hr/>
+
+<div class="well">
+  <%- link_to('New user', path_to.new_user, {class: 'btn'}) %>
+</div>

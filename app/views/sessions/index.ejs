@@ -1,15 +1,14 @@
 <h1>Logon</h1>
 
 <% form_tag({action: path_to.sessions, method: 'POST', id: "session_form"}, function (form) { %>
-	<% [
-			{ name: "username", type: "text", label: "Username" },
+	<% [{ name: "username", type: "text", label: "Username" },
 			{ name: "password", type: "password", label: "Password" } ].forEach( function( item ) { %>
 		<div class="list-row clear-floats">
 			<div class="list-cell label-cell">
 				<%= item.label %>
 			</div>
 			<div class="list-cell content-cell">
-				<input type="<%= item.username %>" name="<%= item.name %>" />
+				<input type="<%= item.type %>" name="<%= item.name %>" />
 			</div>
 		</div>
 	<% } ); %>
