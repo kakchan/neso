@@ -1,6 +1,7 @@
 load('application');
 before(use('requireLogin'));
 before(loadPost, {only: ['show', 'edit', 'update', 'destroy']});
+layout('admin');
 
 action('new', function () {
 	this.title = 'New post';

@@ -18,6 +18,13 @@
 			<%  }
 				 });
 			%>
+			<div class="nav clear-floats">
+				<ul class="nav-list">
+					<li class="nav-list-item" onclick="location.href='/users';">Users</li>
+					<li class="nav-list-item" onclick="location.href='/posts';">Posts</li>
+					<li class="nav-list-item" onclick="location.href='/logout'; return false;">Logout</li>
+				</ul>
+			</div>
 
 			<div class="content">
 				<%- body %>
