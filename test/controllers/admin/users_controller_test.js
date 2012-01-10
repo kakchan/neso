@@ -1,4 +1,4 @@
-require('../test_helper.js').controller('users', module.exports);
+require('../../test_helper.js').controller('users', module.exports);
 
 var sinon  = require('sinon');
 
