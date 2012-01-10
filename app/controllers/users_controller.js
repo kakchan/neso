@@ -25,7 +25,7 @@ action('create', function() {
 });
 
 action('index', function() {
-	this.title = 'Users index';
+	this.title = 'Users';
 	User.all(function (err, users) {
 		render({
 			users: users

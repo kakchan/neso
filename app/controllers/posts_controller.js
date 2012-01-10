@@ -25,7 +25,7 @@ action(function create() {
 });
 
 action(function index() {
-	this.title = 'Posts index';
+	this.title = 'Posts';
 	Post.all(function (err, posts) {
 		render({
 			posts: posts
