@@ -1,7 +1,7 @@
 <% [
 		{ name: "username", label: "Username" },
-		{ name: "password", label: "Password", type: "password" },
-		{ name: "confirm_password", label: "Confirm Password", type: "password" },
+		{ name: "password", label: "Password", type: "password", value: "" },
+		{ name: "confirm_password", label: "Confirm Password", type: "password", value: "" },
 		{ name: "full_name", label: "Full Name" },
 		{ name: "email", label: "E-mail" } ].forEach( function( item ) { %>
 	<div class="list-row clear-floats">
@@ -9,7 +9,7 @@
 			<%- item.label %>
 		</div>
 		<div class="list-cell content-cell">
-				<input type="<%= item.type %>" name="<%= item.name %>" value="<%= user[item.name] || "" %>" />
+				<input type="<%= item.type %>" name="<%= item.name %>" value="<%= !isUndefined( item.value ) ? item.value : (user[item.name] || "") %>" />
 		</div>
 	</div>
 <% } ); %>
