@@ -20,12 +20,12 @@ action('create', function() {
 			redirect(path_to.admin_users);
 		} else {
 			flash('error', 'logon unsuccessful');
-			redirect(path_to.session);
+			redirect(path_to.admin);
 		}
 	} );
 } );
 
 action('destroy', function() {
 	delete req.session.user_id;
-	redirect(path_to.session);
+	redirect("/");
 } );
