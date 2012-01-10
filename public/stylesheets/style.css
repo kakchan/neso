@@ -1,5 +1,5 @@
 HTML, BODY { margin:0; padding:0; }
-H1 { border-bottom: 1px solid #666; color: #555; margin: 12px 0; }
+H1 { color: #555; margin: 12px 0; }
 .container { width: 980px; margin: 0 auto; }
 
 /* Shared styles */
@@ -144,4 +144,5 @@ INPUT[type=button], INPUT[type=submit], INPUT[type=checkbox] { width: auto; }
 .blogList-excerpt { color: #222; margin-bottom: 25px; }
 
 /* Users Table */
+.table THEAD { font-weight: bold; }
 .users-table { width: 100%; }
