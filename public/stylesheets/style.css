@@ -100,9 +100,10 @@ INPUT[type=button], INPUT[type=submit], INPUT[type=checkbox] { width: auto; }
 .page-actions { border-top: 1px solid #999; padding: 15px 0; margin-top: 15px; }
 
 /* Nav List */
-.nav { background-color: #f3f3f3; }
+.nav { background-color: #f3f3f3; border-radius: 0 0 8px 8px; }
 .nav-list { list-style: none; padding: 0; margin: 0; color: #333; }
 .nav-list-item { float: left; padding: 8px 20px; cursor: pointer; }
+.nav-list-item:first-child { border-radius: 0 0 0 8px; }
 .nav-list-item:hover { background-color: #e3e3e3; }
 
 /* List */
