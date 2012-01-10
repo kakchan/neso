@@ -26,7 +26,7 @@
 	</body>
 	<%- javascript_include_tag('jquery', 'rails', 'application') %>
 	<script>
-		$('.alert-message a.close').click(function () {
+		$('.alert-message > .close').click(function () {
 			$(this).parent().fadeOut('slow');
 		});
 	</script>

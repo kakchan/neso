@@ -19,7 +19,7 @@ action(function create() {
 			});
 		} else {
 			flash('info', 'Post created');
-			redirect(path_to.posts);
+			redirect(path_to.admin_posts);
 		}
 	});
 });
@@ -47,7 +47,7 @@ action(function update() {
 	this.post.updateAttributes(body, function (err) {
 		if (!err) {
 			flash('info', 'Post updated');
-			redirect(path_to.posts);
+			redirect(path_to.admin_posts);
 		} else {
 			flash('error', 'Post can not be updated');
 			this.title = 'Edit post details';
@@ -63,14 +63,14 @@ action(function destroy() {
 		} else {
 			flash('info', 'Post successfully removed');
 		}
-		send("'" + path_to.posts + "'");
+		send("'" + path_to.admin_posts + "'");
 	});
 });
 
 function loadPost() {
 	Post.find(params.id, function (err, post) {
 		if (err) {
-			redirect(path_to.posts);
+			redirect(path_to.admin_posts);
 		} else {
 			this.post = post;
 			next();

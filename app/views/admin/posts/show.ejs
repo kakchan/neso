@@ -1,0 +1,12 @@
+<h1>Details of post</h1>
+
+<% ["permalink", "title", "excerpt", "content", "published_date", "published"].forEach( function( data_type ) { %>
+	<%- data_type + ": " + post[ data_type ] %><br/>
+<% } ); %>
+
+<div>
+	<%- link_to('Edit', path_to.edit_admin_post(post), {class: 'btn primary'}) %>
+	<%- link_to('Delete', path_to.admin_post(post), {class: 'btn danger', method: 'delete', remote: true, jsonp: '(function (u) { location.href = u; })'}) %>
+	or
+	<%- link_to('Back to index', path_to.admin_posts) %>
+</div>

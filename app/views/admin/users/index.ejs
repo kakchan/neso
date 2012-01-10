@@ -15,8 +15,8 @@
 			<td><%= user.full_name %></td>
 			<td><%= user.email %></td>
 			<td class="align-right">
-				<%- link_to('Edit', path_to.edit_user(user), {class: 'btn primary'}) %>
-				<%- link_to('Delete', path_to.user(user), {class: 'btn danger', method: 'delete', remote: true, jsonp: '(function (u) {location.href = u;})'}) %>
+				<%- link_to('Edit', path_to.edit_admin_user(user), {class: 'btn primary'}) %>
+				<%- link_to('Delete', path_to.admin_user(user), {class: 'btn danger', method: 'delete', remote: true, jsonp: '(function (u) {location.href = u;})'}) %>
 			</td>
 		</tr>
 	<% }); %>
@@ -26,5 +26,5 @@
 <hr/>
 
 <div class="well">
-  <%- link_to('New User', path_to.new_user, {class: 'btn'}) %>
+  <%- link_to('New User', path_to.new_admin_user, {class: 'btn'}) %>
 </div>

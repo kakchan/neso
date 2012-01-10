@@ -14,7 +14,7 @@ function ValidAttributes () {
 exports['posts controller'] = {
 
 	'GET new': function (test) {
-		test.get('/posts/new', function () {
+		test.get('/admin/posts/new', function () {
 			test.success();
 			test.render('new');
 			test.render('form.' + app.set('view engine'));
@@ -23,7 +23,7 @@ exports['posts controller'] = {
 	},
 
 	'GET index': function (test) {
-		test.get('/posts', function () {
+		test.get('/admin/posts', function () {
 			test.success();
 			test.render('index');
 			test.done();
@@ -35,7 +35,7 @@ exports['posts controller'] = {
 		Post.find = sinon.spy(function (id, callback) {
 			callback(null, new Post);
 		});
-		test.get('/posts/42/edit', function () {
+		test.get('/admin/posts/42/edit', function () {
 			test.ok(Post.find.calledWith('42'));
 			Post.find = find;
 			test.success();
@@ -49,7 +49,7 @@ exports['posts controller'] = {
 		Post.find = sinon.spy(function (id, callback) {
 			callback(null, new Post);
 		});
-		test.get('/posts/42', function (req, res) {
+		test.get('/admin/posts/42', function (req, res) {
 			test.ok(Post.find.calledWith('42'));
 			Post.find = find;
 			test.success();
@@ -65,8 +65,8 @@ exports['posts controller'] = {
 			test.strictEqual(data, post);
 			callback(null, post);
 		});
-		test.post('/posts', post, function () {
-			test.redirect('/posts');
+		test.post('/admin/posts', post, function () {
+			test.redirect('/admin/posts');
 			test.flash('info');
 			test.done();
 		});
@@ -79,7 +79,7 @@ exports['posts controller'] = {
 			test.strictEqual(data, post);
 			callback(new Error, null);
 		});
-		test.post('/posts', post, function () {
+		test.post('/admin/posts', post, function () {
 			test.success();
 			test.render('new');
 			test.flash('error');
@@ -92,8 +92,8 @@ exports['posts controller'] = {
 			test.equal(id, 1);
 			callback(null, {id: 1, updateAttributes: function (data, cb) { cb(null); }});
 		});
-		test.put('/posts/1', new ValidAttributes, function () {
-			test.redirect('/posts/1');
+		test.put('/admin/posts/1', new ValidAttributes, function () {
+			test.redirect('/admin/posts/1');
 			test.flash('info');
 			test.done();
 		});
@@ -104,7 +104,7 @@ exports['posts controller'] = {
 			test.equal(id, 1);
 			callback(null, {id: 1, updateAttributes: function (data, cb) { cb(new Error); }});
 		});
-		test.put('/posts/1', new ValidAttributes, function () {
+		test.put('/admin/posts/1', new ValidAttributes, function () {
 			test.success();
 			test.render('edit');
 			test.flash('error');

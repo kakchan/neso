@@ -17,7 +17,7 @@ action('create', function() {
 	}, function( err, users ) {
 		if ( users.length > 0  && !err) {
 			req.session.user_id = users[0].id;
-			redirect(path_to.posts);
+			redirect(path_to.admin_users);
 		} else {
 			flash('error', 'logon unsuccessful');
 			redirect(path_to.session);

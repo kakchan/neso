@@ -20,8 +20,8 @@
 			%>
 			<div class="nav clear-floats">
 				<ul class="nav-list">
-					<li class="nav-list-item" onclick="location.href='/users';">Users</li>
-					<li class="nav-list-item" onclick="location.href='/posts';">Posts</li>
+					<li class="nav-list-item" onclick="location.href='/admin/users';">Users</li>
+					<li class="nav-list-item" onclick="location.href='/admin/posts';">Posts</li>
 					<li class="nav-list-item" onclick="location.href='/logout'; return false;">Logout</li>
 				</ul>
 			</div>
@@ -33,7 +33,7 @@
 	</body>
 	<%- javascript_include_tag('jquery', 'rails', 'application') %>
 	<script>
-		$('.alert-message a.close').click(function () {
+		$('.alert-message .close').click(function () {
 			$(this).parent().fadeOut('slow');
 		});
 	</script>

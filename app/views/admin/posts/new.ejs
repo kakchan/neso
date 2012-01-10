@@ -1,0 +1,9 @@
+<h1>New post</h1>
+
+<% form_for(post, {action: path_to.admin_posts, method: 'POST', id: "post_form"}, function (form) { %>
+	<%- partial('admin/posts/form.ejs', {locals: {form: form, post: post}}) %>
+	<div class="page-actions">
+		<%- form.submit('Create post', {class: 'btn primary'}) %>
+		<%- link_to('Cancel', path_to.admin_posts, {class: 'btn'}) %>
+	</div>
+<% });%>

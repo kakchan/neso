@@ -30,7 +30,7 @@ action('create', function() {
 			});
 		} else {
 			flash('info', 'User created');
-			redirect(path_to.users);
+			redirect(path_to.admin_users);
 		}
 	});
 });
@@ -58,7 +58,7 @@ action('update', function() {
 	this.user.updateAttributes(getUserInfo(), function (err) {
 		if (!err) {
 			flash('info', 'User updated');
-			redirect(path_to.users);
+			redirect(path_to.admin_users);
 		} else {
 			flash('error', 'User can not be updated');
 			this.title = 'Edit user details';
@@ -74,14 +74,14 @@ action('destroy', function() {
 		} else {
 			flash('info', 'User successfully removed');
 		}
-		send("'" + path_to.users + "'");
+		send("'" + path_to.admin_users + "'");
 	});
 });
 
 function loadUser() {
 	User.find(params.id, function (err, user) {
 		if (err) {
-			redirect(path_to.users);
+			redirect(path_to.admin_users);
 		} else {
 			this.user = user;
 			next();
