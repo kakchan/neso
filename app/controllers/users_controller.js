@@ -3,6 +3,17 @@ before(use('requireLogin'));
 before(loadUser, {only: ['show', 'edit', 'update', 'destroy']});
 layout('admin');
 
+var crypto = require('ezcrypto').Crypto;
+
+var getUserInfo = function() {
+	return {
+		username: req.body.username,
+		password: crypto.SHA256(req.body.password),
+		full_name: req.body.full_name,
+		email: req.body.email
+	};
+};
+
 action('new', function () {
 	this.title = 'New user';
 	this.user = new User;
@@ -10,7 +21,7 @@ action('new', function () {
 });
 
 action('create', function() {
-	User.create(req.body, function (err, user) {
+	User.create(getUserInfo(), function (err, user) {
 		if (err) {
 			flash('error', 'User can not be created');
 			render('new', {
@@ -44,7 +55,7 @@ action('edit', function() {
 });
 
 action('update', function() {
-	this.user.updateAttributes(body, function (err) {
+	this.user.updateAttributes(getUserInfo(), function (err) {
 		if (!err) {
 			flash('info', 'User updated');
 			redirect(path_to.users);
