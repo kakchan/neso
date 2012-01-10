@@ -4,6 +4,7 @@ exports.routes = function (map) {
 		admin.resources('posts');
 	});
 	map.resources('session', { only: [ 'create' ]});
+	map.resources('posts', { only: [ 'show' ]});
 	map.get('/admin', 'session#index');
 	map.get('/admin/logout', 'session#destroy');
 	map.get('/', 'posts#index');

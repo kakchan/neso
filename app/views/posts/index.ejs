@@ -1,1 +1,22 @@
 <h1>Posts</h1>
+
+<div class="blogList list">
+	<% posts.forEach(function (post) { %>
+	<div class="blogList-row list-row clear-floats">
+		<div class="flow-left">
+			<h2 class="blogList-title">
+				<a href="<%= path_to.post(post) %>"><%= post.title %></a>
+			</h2>
+			<div class="blogList-excerpt">
+				<span><%= post.excerpt || "" %></span>
+			</div>
+			<div class="blogList-info">
+				<span>author: <%= post.author || "" %></span>
+				<span>permalink: <%= post.permalink || "" %></span>
+				<span>published on: <%= post.publish_date || "" %></span>
+				<span>published: <%= post.published %></span>
+			</div>
+		</div>
+	</div>
+	<% }); %>
+</div>

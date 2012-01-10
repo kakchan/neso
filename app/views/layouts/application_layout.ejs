@@ -7,6 +7,9 @@
 	</head>
 	<body>
 		<div class="container">
+			<div class="top_nav">
+				<img src="/images/logo.png" />
+			</div>
 			<% [ "info", "error" ].forEach( function( flash_type ) {
 					var flash = request.flash(flash_type).pop();
 					if (flash) {
@@ -21,6 +24,14 @@
 
 			<div class="content">
 				<%- body %>
+			</div>
+			<div class="footer">
+				<div class="flow-left">
+					&copy; Copyright 2012
+				</div>
+				<div class="flow-right">
+					Designed by <a href="https://github.com/kakchan">kakchan</a>
+				</div>
 			</div>
 		</div>
 	</body>

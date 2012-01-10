@@ -119,6 +119,7 @@ INPUT[type=button], INPUT[type=submit], INPUT[type=checkbox] { width: auto; }
 
 /* Page Style */
 .page-actions { border-top: 1px solid #999; padding: 15px 0; margin-top: 15px; }
+.footer { margin-top: 50px; }
 
 /* Nav List */
 .nav { background-color: #f3f3f3; border-radius: 0 0 8px 8px; }

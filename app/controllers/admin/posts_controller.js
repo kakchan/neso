@@ -9,7 +9,7 @@ action('new', function () {
 	render();
 });
 
-action(function create() {
+action('create', function() {
 	Post.create(req.body, function (err, user) {
 		if (err) {
 			flash('error', 'Post can not be created');
@@ -24,7 +24,7 @@ action(function create() {
 	});
 });
 
-action(function index() {
+action('index', function() {
 	this.title = 'Posts';
 	Post.all(function (err, posts) {
 		render({
@@ -33,17 +33,17 @@ action(function index() {
 	});
 });
 
-action(function show() {
+action('show', function() {
 	this.title = 'Post show';
 	render();
 });
 
-action(function edit() {
+action('edit', function() {
 	this.title = 'Post edit';
 	render();
 });
 
-action(function update() {
+action('update', function() {
 	this.post.updateAttributes(body, function (err) {
 		if (!err) {
 			flash('info', 'Post updated');
@@ -56,7 +56,7 @@ action(function update() {
 	}.bind(this));
 });
 
-action(function destroy() {
+action('destroy', function() {
 	this.post.destroy(function (error) {
 		if (error) {
 			flash('error', 'Can not destroy post');
@@ -67,6 +67,7 @@ action(function destroy() {
 	});
 });
 
+/* Public Methods */
 function loadPost() {
 	Post.find(params.id, function (err, post) {
 		if (err) {
