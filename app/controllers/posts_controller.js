@@ -9,8 +9,11 @@ action( 'show', function() {
 action( 'index', function() {
 	this.title = "Posts";
 	Post.all(function(err, posts) {
-		render({
-			posts: posts
+		BlockContent.all( function( err, block_contents ) {
+			render({
+				posts: posts,
+				block_contents: block_contents
+			});
 		});
 	});
 } );

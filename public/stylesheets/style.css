@@ -150,3 +150,6 @@ INPUT[type=button], INPUT[type=submit], INPUT[type=checkbox] { width: auto; }
 
 /* Top Nav */
 .company-logo { padding: 15px 0 0 0; }
+.top-nav-right { padding: 20px 0; }
+.top-nav A { color: #333; text-decoration: none; }
+.top-nav A:hover { text-decoration: underline; }

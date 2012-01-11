@@ -1,10 +1,16 @@
-<div class="top_nav clear-floats">
+<div class="top-nav clear-floats">
 	<div class="flow-left">
 		<div class="company-logo">
 			<img src="/images/logo.png" />
 		</div>
 	</div>
-	<div class="flow-right">
-
+	<div class="flow-right top-nav-right">
+		<%
+			var block_contents = block_contents || [];
+			var contents = block_contents.map( function( block_content ) {
+				return "<A href='#'>" + block_content.title + "</A>";
+			} );
+		%>
+		<%- contents.join(" | ") %>
 	</div>
 </div>
