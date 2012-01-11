@@ -147,3 +147,6 @@ INPUT[type=button], INPUT[type=submit], INPUT[type=checkbox] { width: auto; }
 /* Users Table */
 .table THEAD { font-weight: bold; }
 .users-table { width: 100%; }
+
+/* Top Nav */
+.company-logo { padding: 15px 0 0 0; }
