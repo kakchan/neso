@@ -7,38 +7,14 @@
 	</head>
 	<body>
 		<div class="container">
-			<div class="top_nav">
-				<img src="/images/logo.png" />
-			</div>
-			<% [ "info", "error" ].forEach( function( flash_type ) {
-					var flash = request.flash(flash_type).pop();
-					if (flash) {
-			%>
-				<div class="alert-message <%- flash_type %>">
-					<%- flash %>
-					<div class="close flow-right" href="#">×</div>
-				</div>
-			<%  }
-				 });
-			%>
+			<%- partial('layouts/alert_message.ejs') %>
+			<%- partial('layouts/topnav.ejs') %>
 
 			<div class="content">
 				<%- body %>
 			</div>
-			<div class="footer">
-				<div class="flow-left">
-					&copy; Copyright 2012
-				</div>
-				<div class="flow-right">
-					Designed by <a href="https://github.com/kakchan">kakchan</a>
-				</div>
-			</div>
+			<%- partial('layouts/footer.ejs') %>
 		</div>
 	</body>
 	<%- javascript_include_tag('jquery', 'rails', 'application') %>
-	<script>
-		$('.alert-message > .close').click(function () {
-			$(this).parent().fadeOut('slow');
-		});
-	</script>
 </html>

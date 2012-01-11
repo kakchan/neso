@@ -7,34 +7,13 @@
 	</head>
 	<body>
 		<div class="container">
-			<% [ "info", "error" ].forEach( function( flash_type ) {
-					var flash = request.flash(flash_type).pop();
-					if (flash) {
-			%>
-				<div class="alert-message <%- flash_type %>">
-					<%- flash %>
-					<div class="close flow-right" href="#">×</div>
-				</div>
-			<%  }
-				 });
-			%>
-			<div class="nav clear-floats">
-				<ul class="nav-list">
-					<li class="nav-list-item" onclick="location.href='/admin/users';">Users</li>
-					<li class="nav-list-item" onclick="location.href='/admin/posts';">Posts</li>
-					<li class="nav-list-item" onclick="location.href='/admin/logout'; return false;">Logout</li>
-				</ul>
-			</div>
-
+			<%- partial('layouts/alert_message.ejs') %>
+			<%- partial('layouts/admin_topnav.ejs') %>
 			<div class="content">
 				<%- body %>
 			</div>
+			<%- partial('layouts/footer.ejs') %>
 		</div>
 	</body>
 	<%- javascript_include_tag('jquery', 'rails', 'application') %>
-	<script>
-		$('.alert-message .close').click(function () {
-			$(this).parent().fadeOut('slow');
-		});
-	</script>
 </html>

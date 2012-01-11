@@ -1,0 +1,11 @@
+<% [ "info", "error" ].forEach( function( flash_type ) {
+		var flash = request.flash(flash_type).pop();
+		if (flash) {
+%>
+	<div class="alert-message <%- flash_type %>">
+		<%- flash %>
+		<div class="close flow-right" href="#">×</div>
+	</div>
+<%  }
+	 });
+%>

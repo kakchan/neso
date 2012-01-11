@@ -1,1 +1,5 @@
-// place your application-wide javascripts here
+$( function() {
+	$('.alert-message > .close').click(function () {
+		$(this).parent().fadeOut('slow');
+	});
+} );
