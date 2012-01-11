@@ -1,0 +1,11 @@
+<div class="page-header">
+  <h1>Edit Block Content</h1>
+</div>
+
+<% form_for(blockcontent, {action: path_to.admin_blockcontent(blockcontent), method: 'PUT', id: "blockcontent_form"}, function (form) { %>
+  <%- partial('admin/blockcontents/form.ejs', {locals: {form: form, blockcontent: blockcontent}}) %>
+  <div class="actions">
+    <%- form.submit('Update blockcontent', {class: 'btn primary'}) %>
+    <%- link_to('Cancel', path_to.admin_blockcontent(blockcontent), {class: 'btn'}) %>
+  </div>
+<% });%>

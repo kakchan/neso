@@ -1,0 +1,11 @@
+<div class="page-header">
+  <h1>New Block Content</h1>
+</div>
+
+<% form_for(blockcontent, {action: path_to.admin_blockcontents, method: 'POST', id: "blockcontent_form"}, function (form) { %>
+  <%- partial('admin/blockcontents/form.ejs', {locals: {form: form, blockcontent: blockcontent}}) %>
+  <div class="actions">
+    <%- form.submit('Create Block Content', {class: 'btn primary'}) %>
+    <%- link_to('Cancel', path_to.admin_blockcontents, {class: 'btn'}) %>
+  </div>
+<% });%>

@@ -1,0 +1,12 @@
+<% [
+		{ name: "title", label: "Title" },
+		{ name: "content", label: "Content" } ].forEach( function( item ) { %>
+	<div class="list-row clear-floats">
+		<div class="list-cell label-cell">
+			<%- item.label %>
+		</div>
+		<div class="list-cell content-cell">
+			<%- form[ item.type || "input" ](item.name) %>
+		</div>
+	</div>
+<% } ); %>

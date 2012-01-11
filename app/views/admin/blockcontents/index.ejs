@@ -1,0 +1,23 @@
+<h1>Block Contents</h1>
+
+<div class="blockContentList list">
+	<% blockcontents.forEach(function (blockcontent) { %>
+		<div class="blockContentRow list-row clear-floats">
+			<div class="flow-left">
+				<h2 class="blockContentList-title list-title">
+					<a href="<%= path_to.edit_admin_blockcontent(blockcontent) %>"><%= blockcontent.title %></a>
+				</h2>
+			</div>
+			<div class="flow-right">
+		    <%- link_to('Edit', path_to.edit_admin_blockcontent(blockcontent), {class: 'btn primary'}) %>
+		    <%- link_to('Delete', path_to.admin_blockcontent(blockcontent), {class: 'btn danger', method: 'delete', remote: true, jsonp: '(function (u) {location.href = u;})'}) %>
+			</div>
+		</div>
+	<% }); %>
+</div>
+
+<hr/>
+
+<div class="well">
+  <%- link_to('New Block Content', path_to.new_admin_blockcontent, {class: 'btn primary'}) %>
+</div>

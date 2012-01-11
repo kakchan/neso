@@ -130,14 +130,14 @@ INPUT[type=button], INPUT[type=submit], INPUT[type=checkbox] { width: auto; }
 
 /* List */
 .list-row { padding: 3px; }
+.list-title { margin: 0; }
+.list-title A { color: #333; text-decoration: none; }
+.list-title A:hover { text-decoration: underline; }
 .label-cell, .content-cell { float: left; }
 .label-cell { width: 130px; padding: 4px 0; }
 .content-cell { width: 300px; }
 
 /* Blog List Specific */
-.blogList-title { margin: 0; }
-.blogList-title A { color: #333; text-decoration: none; }
-.blogList-title A:hover { text-decoration: underline; }
 .blogList-row { border-bottom: 1px solid #ddd; padding-top: 10px; padding-bottom: 15px; }
 .blogList-row:last-child { border-bottom: 0; }
 .blogList-info { color: #333; }

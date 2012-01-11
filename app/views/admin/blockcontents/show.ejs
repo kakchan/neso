@@ -1,0 +1,9 @@
+<div class="page-header">
+  <h1>Block Content</h1>
+</div>
+
+<div class="actions">
+  <%- link_to('Edit', path_to.edit_admin_blockcontent(blockcontent), {class: 'btn primary'}) %>
+  <%- link_to('Delete', path_to.admin_blockcontent(blockcontent), {class: 'btn danger', method: 'delete', remote: true, jsonp: '(function (u) { location.href = u; })'}) %>
+  <%- link_to('Back to index', path_to.admin_blockcontents) %>
+</div>

@@ -2,6 +2,7 @@ exports.routes = function (map) {
 	map.namespace('admin', function(admin) {
 		admin.resources('users');
 		admin.resources('posts');
+		admin.resources('blockcontents');
 	});
 	map.resources('session', { only: [ 'create' ]});
 	map.resources('posts', { only: [ 'show' ]});
