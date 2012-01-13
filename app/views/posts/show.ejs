@@ -1,5 +1,7 @@
-<h1>Details of post</h1>
-
-<% ["permalink", "title", "excerpt", "content", "published_date", "published"].forEach( function( data_type ) { %>
-	<%- data_type + ": " + post[ data_type ] %><br/>
-<% } ); %>
+<h1><%= post.title %></h1>
+<div class="post-info">
+	<span class="post-info-published">published: <%= post.published_date %></span>
+	<span class="post-info-author">author: <%= post.author %></span>
+</div>
+<br/>
+<%= post.content %>
