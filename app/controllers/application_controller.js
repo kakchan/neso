@@ -17,3 +17,10 @@ publish('alreadyLoggedIn', function() {
 		next();
 	}
 } );
+
+publish('show_block_content', function() {
+	BlockContent.all( function( err, block_contents ) {
+		this.block_contents = block_contents;
+		next();
+	}.bind( this ) );
+} );

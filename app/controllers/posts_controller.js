@@ -1,5 +1,6 @@
 load('application');
 before(loadPost, {only: ['show']});
+before( use('show_block_content'), { only: [ "show", "index" ] } );
 
 action( 'show', function() {
 	this.title = "Post";
@@ -9,11 +10,8 @@ action( 'show', function() {
 action( 'index', function() {
 	this.title = "Posts";
 	Post.all(function(err, posts) {
-		BlockContent.all( function( err, block_contents ) {
-			render({
-				posts: posts,
-				block_contents: block_contents
-			});
+		render({
+			posts: posts
 		});
 	});
 } );
