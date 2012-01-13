@@ -5,7 +5,7 @@
 <% form_for(user, {action: path_to.admin_user(user), method: 'PUT', id: "user_form"}, function (form) { %>
 	<%- partial('admin/users/form.ejs', {locals: {form: form, user: user}}) %>
 	<div class="actions">
-		<%- form.submit('Update user', {class: 'btn primary'}) %>
+		<%- form.submit('Update', {class: 'btn primary'}) %>
 		<%- link_to('Cancel', path_to.admin_users, {class: 'btn'}) %>
 	</div>
 <% });%>

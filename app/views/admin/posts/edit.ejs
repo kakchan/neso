@@ -3,7 +3,7 @@
 <% form_for(post, {action: path_to.admin_post(post), method: 'PUT', id: "post_form"}, function (form) { %>
 	<%- partial('admin/posts/form.ejs', {locals: {form: form, post: post}}) %>
 	<div class="page-actions">
-		<%- form.submit('Update post', {class: 'btn primary'}) %>
+		<%- form.submit('Update', {class: 'btn primary'}) %>
 		<%- link_to('Cancel', path_to.admin_posts, {class: 'btn'}) %>
 	</div>
 <% });%>
