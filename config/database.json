@@ -14,8 +14,8 @@
   , "database": 1
   }
 , "production":
-  { "driver":   "redis"
-  , "host":     "localhost"
+  { "driver":   "mongoose"
+  , "host":     "mongodb://localhost/mimas-demo"
   , "database": 0
   }
 }
