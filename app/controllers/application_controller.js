@@ -12,7 +12,7 @@ publish('requireLogin', function () {
 
 publish('alreadyLoggedIn', function() {
 	if (req.session.user_id) {
-		res.redirect(path_to.admin_users);
+		res.redirect("/admin/users");
 	} else {
 		next();
 	}
