@@ -1,9 +1,4 @@
-define('User', function () {
-	property('email', String, { index: true });
-	property('password', String);
-	property('activated', Boolean, {"default": false});
-});
-
+var models = {};
 var Post = describe('Post', function () {
 	property('permalink', String);
 	property('title', String);
@@ -23,6 +18,11 @@ var User = describe('User', function () {
 });
 
 var BlockContent = describe('BlockContent', function () {
-    property('title', String);
-    property('content', String);
+	property('permalink', String);
+  property('title', String);
+  property('content', String);
+});
+
+var Install = describe('Install', function () {
+	property('isInstalled', Boolean);
 });
