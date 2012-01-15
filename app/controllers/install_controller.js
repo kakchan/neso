@@ -71,7 +71,9 @@ action('index', function() {
 	this.title = "Installation";
 	Install.all( function( err, installed_scripts) {
 		if ( installed_scripts.length === 0 ) {
-			render();
+			render( {
+				message: null
+			} );
 		} else {
 			render( {
 				message: "You have successfully installed Mimas"
