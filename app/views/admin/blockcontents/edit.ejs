@@ -6,6 +6,6 @@
   <%- partial('admin/blockcontents/form.ejs', {locals: {form: form, blockcontent: blockcontent}}) %>
   <div class="actions">
     <%- form.submit('Update', {class: 'btn primary'}) %>
-    <%- link_to('Cancel', path_to.admin_blockcontent(blockcontent), {class: 'btn'}) %>
+    <%- link_to('Cancel', path_to.admin_blockcontents, {class: 'btn'}) %>
   </div>
 <% });%>

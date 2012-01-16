@@ -15,7 +15,7 @@ action(function create() {
 			flash('error', 'BlockContent can not be created');
 			render('new', {
 				blockcontent: user,
-				title: 'New blockcontent'
+				title: 'New Block Content'
 			});
 		} else {
 			flash('info', 'BlockContent created');
@@ -34,23 +34,23 @@ action(function index() {
 });
 
 action(function show() {
-  this.title = 'BlockContent show';
+  this.title = 'Block Content Show';
   render();
 });
 
 action(function edit() {
-  this.title = 'BlockContent edit';
+  this.title = 'Block Content Edit';
   render();
 });
 
 action(function update() {
 	this.blockcontent.updateAttributes(body, function (err) {
 		if (!err) {
-			flash('info', 'BlockContent updated');
-			redirect(path_to.admin_blockcontent(this.blockcontent));
+			flash('info', 'Block Content Updated');
+			redirect(path_to.admin_blockcontents);
 		} else {
-			flash('error', 'BlockContent can not be updated');
-			this.title = 'Edit blockcontent details';
+			flash('error', 'Block Content can not be updated');
+			this.title = 'Edit Block Content Details';
 			render('edit');
 		}
 	}.bind(this));
@@ -59,9 +59,9 @@ action(function update() {
 action(function destroy() {
 	this.blockcontent.destroy(function (error) {
 		if (error) {
-			flash('error', 'Can not destroy blockcontent');
+			flash('error', 'Can not destroy Block Content');
 		} else {
-			flash('info', 'BlockContent successfully removed');
+			flash('info', 'Block Content successfully removed');
 		}
 		send("'" + path_to.admin_blockcontents + "'");
 	});

@@ -8,7 +8,7 @@
 		<%
 			var block_contents = block_contents || [];
 			var contents = block_contents.map( function( block_content ) {
-				return "<A href='/blockcontents/" + block_content.id + "'>" + block_content.title + "</A>";
+				return "<A href='/" + block_content.permalink + "'>" + block_content.title + "</A>";
 			} );
 		%>
 		<%- contents.join(" | ") %>

@@ -2,11 +2,28 @@ load('application');
 before(loadPost, {only: ['show']});
 before( use('show_block_content'), { only: [ "show", "index", "showAliasContent" ] } );
 
-action( 'showAliasContent', function() {
-	Post.all( { where: { permalink: params.id } }, function (err, posts) {
-		if (err || posts.length === 0 ) {
+function showBlockContent( alias ) {
+	this.title = "Block Content";
+	BlockContent.all({ where: { permalink: alias } }, function (err, blockcontents) {
+		if (err) {
 			redirect("/");
 //			redirect("page_not_found");
+		} else {
+			render("../blockcontents/show", {
+				title: "Block Content",
+				block_content: blockcontents[0]
+			});
+		}
+	}.bind(this));
+}
+
+action( 'showAliasContent', function() {
+	Post.all( { where: { permalink: params.id } }, function (err, posts) {
+		if (err) {
+			redirect("/");
+//			redirect("page_not_found");
+		} else if ( posts.length === 0 ) {
+			showBlockContent( params.id );
 		} else {
 			var post = posts[0];
 			this.title = post.title;
