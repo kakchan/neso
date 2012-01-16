@@ -1,6 +1,21 @@
 load('application');
 before(loadPost, {only: ['show']});
-before( use('show_block_content'), { only: [ "show", "index" ] } );
+before( use('show_block_content'), { only: [ "show", "index", "showAliasContent" ] } );
+
+action( 'showAliasContent', function() {
+	Post.all( { where: { permalink: params.id } }, function (err, posts) {
+		if (err || posts.length === 0 ) {
+			redirect("/");
+//			redirect("page_not_found");
+		} else {
+			var post = posts[0];
+			this.title = post.title;
+			render("show", {
+				post: post
+			});
+		}
+	}.bind(this));
+});
 
 action( 'show', function() {
 	this.title = "Post";
