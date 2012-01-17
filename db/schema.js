@@ -16,7 +16,7 @@ var User = describe('User', function () {
 	property('email', String);
 });
 
-User.validatesLengthOf('username', {min: 6});
+User.validatesLengthOf('username', {min: 4});
 User.validatesPresenceOf('username', 'password', 'full_name');
 
 var BlockContent = describe('BlockContent', function () {

@@ -29,10 +29,10 @@ function validateForm( form, types ) {
 	return true;
 }
 
-function user_update_click() {
+function user_form_submit() {
 	var form = document.forms[0],
 			isValid = validateForm( form, [
-				{ name: "username", min_length: 8 },
+				{ name: "username", min_length: 4 },
 				{ name: "password", min_length: 8 },
 				{ name: "confirm_password", presence: true },
 				{ name: "password", match_with: "confirm_password" },
