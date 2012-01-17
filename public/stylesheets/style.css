@@ -1,5 +1,7 @@
 HTML, BODY { margin:0; padding:0; }
 H1 { color: #555; margin: 12px 0; }
+TEXTAREA { width: 820px; height: 150px; }
+
 .container { width: 980px; margin: 0 auto; }
 
 /* Shared styles */
