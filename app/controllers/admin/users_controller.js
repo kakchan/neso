@@ -57,11 +57,11 @@ action('edit', function() {
 action('update', function() {
 	this.user.updateAttributes(getUserInfo(), function (err) {
 		if (!err) {
-			flash('info', 'User updated');
+			flash('info', 'User Updated');
 			redirect(path_to.admin_users);
 		} else {
 			flash('error', 'User can not be updated');
-			this.title = 'Edit user details';
+			this.title = 'Edit User Details';
 			render('edit');
 		}
 	}.bind(this));

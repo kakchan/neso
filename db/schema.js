@@ -1,4 +1,3 @@
-var models = {};
 var Post = describe('Post', function () {
 	property('permalink', String);
 	property('title', String);
@@ -16,6 +15,9 @@ var User = describe('User', function () {
 	property('full_name', String);
 	property('email', String);
 });
+
+User.validatesLengthOf('username', {min: 6});
+User.validatesPresenceOf('username', 'password', 'full_name');
 
 var BlockContent = describe('BlockContent', function () {
 	property('permalink', String);
