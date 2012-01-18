@@ -4,7 +4,7 @@ before(loadPost, {only: ['show', 'edit', 'update', 'destroy']});
 layout('admin');
 
 action('new', function () {
-	this.title = 'New post';
+	this.title = 'New Post';
 	this.post = new Post;
 	render();
 });
@@ -34,19 +34,19 @@ action('index', function() {
 });
 
 action('show', function() {
-	this.title = 'Post show';
+	this.title = 'Post Show';
 	render();
 });
 
 action('edit', function() {
-	this.title = 'Post edit';
+	this.title = 'Post Edit';
 	render();
 });
 
 action('update', function() {
 	this.post.updateAttributes(body, function (err) {
 		if (!err) {
-			flash('info', 'Post updated');
+			flash('info', 'Post Updated');
 			redirect(path_to.admin_posts);
 		} else {
 			flash('error', 'Post can not be updated');
