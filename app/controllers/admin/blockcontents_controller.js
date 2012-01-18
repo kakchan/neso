@@ -4,7 +4,7 @@ before(loadBlockContent, {only: ['show', 'edit', 'update', 'destroy']});
 layout('admin');
 
 action('new', function () {
-  this.title = 'New blockcontent';
+  this.title = 'New Block Content';
   this.blockcontent = new BlockContent;
   render();
 });
@@ -12,20 +12,20 @@ action('new', function () {
 action(function create() {
 	BlockContent.create(req.body, function (err, user) {
 		if (err) {
-			flash('error', 'BlockContent can not be created');
+			flash('error', 'Block Content can not be created');
 			render('new', {
 				blockcontent: user,
 				title: 'New Block Content'
 			});
 		} else {
-			flash('info', 'BlockContent created');
+			flash('info', 'Block Content Created');
 			redirect(path_to.admin_blockcontents);
 		}
 	});
 });
 
 action(function index() {
-	this.title = 'BlockContents index';
+	this.title = 'Block Contents Index';
 	BlockContent.all(function (err, blockcontents) {
 		render({
 			blockcontents: blockcontents
