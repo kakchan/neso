@@ -5,7 +5,7 @@ var Post = describe('Post', function () {
 	property('excerpt', String);
 	property('author', String);
 
-	property('published_date', Date);
+	property('published_date', { type: Date, "default": Date.now });
 	property('published', Boolean);
 });
 

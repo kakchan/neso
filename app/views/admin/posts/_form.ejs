@@ -3,7 +3,7 @@
 		{ name: "title", label: "Title", value: post['title'] },
 		{ name: "excerpt", label: "Excerpt", type: "textarea", value: post['excerpt'] },
 		{ name: "content", label: "Content", type: "textarea", value: post['content'] },
-		{ name: "published_date", label: "Published Date", value: post['published_date'] },
+		{ name: "published_date", label: "Published Date", value: post['published_date'], type: "date" },
 		{ name: "published", label: "Published", type: "checkbox", value: post['published'] } ].forEach( function( item ) { %>
 	<div class="list-row clear-floats">
 		<div class="list-cell label-cell">
@@ -11,11 +11,13 @@
 		</div>
 		<div class="list-cell content-cell">
 			<% if ( item.type === "textarea" ) { %>
-				<textarea id="<%= item.name %>" name="<%= item.name%>"><%= item.value %></textarea>
+				<textarea id="<%= item.name %>" name="<%= item.name%>"><%= item.value || "" %></textarea>
 			<% } else if ( item.type === "checkbox" ) { %>
 				<input id="<%= item.name %>" name="<%= item.name %>" type="<%= item.type %>" <%= item.value === "true" ? "checked" : "" %> />
+			<% } else if ( item.type === "date" ) { %>
+				<input id="<%= item.name %>" name="<%= item.name %>" class="ui-<%= item.type %>" value="<%= item.value %>" />
 			<% } else { %>
-				<input id="<%= item.name %>" name="<%= item.name %>" type="<%= item.type %>" value="<%= item.value %>" />
+				<input id="<%= item.name %>" name="<%= item.name %>" class="ui-<%= item.type || "text" %>" type="<%= item.type %>" value="<%= item.value || "" %>" />
 			<% } %>
 		</div>
 	</div>

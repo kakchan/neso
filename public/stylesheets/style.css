@@ -1,4 +1,6 @@
 HTML, BODY { margin:0; padding:0; }
+BODY { font-size: 12px; }
+DIV.container { font-size: 16px; }
 H1 { color: #555; margin: 12px 0; }
 TEXTAREA { width: 820px; height: 150px; }
 
@@ -22,6 +24,7 @@ TEXTAREA { width: 820px; height: 150px; }
 /* Fields styles */
 INPUT { width: 280px; padding: 3px 5px; border-radius: 5px; }
 INPUT[type=button], INPUT[type=submit], INPUT[type=checkbox] { width: auto; }
+.ui-date { width: 120px; }
 
 /* message panel */
 .alert-message {

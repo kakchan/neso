@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title><%= title %></title>
-		<%- stylesheet_link_tag('style') %>
+		<%- stylesheet_link_tag('style', 'jquery.ui') %>
 		<%- csrf_meta_tag() %>
 	</head>
 	<body>
@@ -15,5 +15,7 @@
 			<%- partial('layouts/footer.ejs') %>
 		</div>
 	</body>
-	<%- javascript_include_tag('jquery', 'rails', 'application', 'validation', 'nicEdit', 'admin') %>
+	<%- javascript_include_tag(
+					'jquery', 'rails', 'jquery.ui.core', 'jquery.ui.widget', 'jquery.ui.datepicker',
+					'application', 'validation', 'nicEdit', 'admin') %>
 </html>

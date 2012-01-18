@@ -7,11 +7,16 @@ var Utils = require( "../../../lib/Utils" );
 action('new', function () {
 	this.title = 'New Post';
 	this.post = new Post;
+	this.post.published_date = Utils.formatToDate( Date.now() );
 	render();
 });
 
 action('create', function() {
-	Post.create(req.body, function (err, user) {
+	var obj = Utils.merge( body, {
+		published_date: Date.now(),
+		published: body.published === "on"
+	} );
+	Post.create(obj, function (err, user) {
 		if (err) {
 			flash('error', 'Post can not be created');
 			render('new', {
@@ -41,11 +46,16 @@ action('show', function() {
 
 action('edit', function() {
 	this.title = 'Post Edit';
-	render();
+	render( {
+		post: Utils.merge( this.post, {
+			published_date: Utils.formatToDate( this.post.published_date )
+		} )
+	});
 });
 
 action('update', function() {
 	var obj = Utils.merge( body, {
+		published_date: Date.now(),
 		published: body.published === "on"
 	} );
 	this.post.updateAttributes(

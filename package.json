@@ -12,7 +12,8 @@
   , "coffee-script":    ">= 1.1.1"
   , "mime":             ">= 1.2.2"
   , "qs":               ">= 0.1.0"
-	, "ezcrypto":           "= 0.0.3"
+	, "ezcrypto":         "= 0.0.3"
+	, "dateformatjs":         "= 0.0.6"
   }
 , "scripts":
   { "test": "nodeunit test/*/*"
