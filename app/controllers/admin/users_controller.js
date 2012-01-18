@@ -15,7 +15,7 @@ var getUserInfo = function() {
 };
 
 action('new', function () {
-	this.title = 'New user';
+	this.title = 'New User';
 	this.user = new User;
 	render();
 });
@@ -26,10 +26,10 @@ action('create', function() {
 			flash('error', 'User can not be created');
 			render('new', {
 				user: user,
-				title: 'New user'
+				title: 'New User'
 			});
 		} else {
-			flash('info', 'User created');
+			flash('info', 'User Created');
 			redirect(path_to.admin_users);
 		}
 	});
@@ -45,12 +45,12 @@ action('index', function() {
 });
 
 action('show', function() {
-	this.title = 'User show';
+	this.title = 'User Show';
 	render();
 });
 
 action('edit', function() {
-	this.title = 'User edit';
+	this.title = 'User Edit';
 	render();
 });
 
