@@ -2,6 +2,7 @@ load('application');
 before(use('requireLogin'));
 before(loadPost, {only: ['show', 'edit', 'update', 'destroy']});
 layout('admin');
+var Utils = require( "../../../lib/Utils" );
 
 action('new', function () {
 	this.title = 'New Post';
@@ -15,7 +16,7 @@ action('create', function() {
 			flash('error', 'Post can not be created');
 			render('new', {
 				post: user,
-				title: 'New post'
+				title: 'New Post'
 			});
 		} else {
 			flash('info', 'Post created');
@@ -44,7 +45,11 @@ action('edit', function() {
 });
 
 action('update', function() {
-	this.post.updateAttributes(body, function (err) {
+	var obj = Utils.merge( body, {
+		published: body.published === "on"
+	} );
+	this.post.updateAttributes(
+		obj, function (err) {
 		if (!err) {
 			flash('info', 'Post Updated');
 			redirect(path_to.admin_posts);
