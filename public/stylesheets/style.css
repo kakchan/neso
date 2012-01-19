@@ -147,6 +147,7 @@ FORM .list-row:hover { background-color: transparent; }
 
 /* Blog List Specific */
 .blogList-row { border-bottom: 1px solid #ddd; padding-top: 10px; padding-bottom: 15px; }
+.blogList-row H2 { margin: 5px 0 15px 0; }
 .blogList-row:last-child { border-bottom: 0; }
 .blogList-row-leftCell { width: 750px; }
 .blogList-info { color: #333; }
