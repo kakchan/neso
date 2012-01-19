@@ -13,7 +13,7 @@ action('new', function () {
 
 action('create', function() {
 	var obj = Utils.merge( body, {
-		published_date: Date.now(),
+		published_date: Utils.parseDate( body.published_date ),
 		published: body.published === "on"
 	} );
 	Post.create(obj, function (err, user) {
@@ -55,7 +55,7 @@ action('edit', function() {
 
 action('update', function() {
 	var obj = Utils.merge( body, {
-		published_date: Date.now(),
+		published_date: Utils.parseDate( body.published_date ),
 		published: body.published === "on"
 	} );
 	this.post.updateAttributes(
