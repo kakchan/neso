@@ -9,7 +9,7 @@
 				<span><%- post.excerpt ? convertToHtml( post.excerpt ) : "" %></span>
 			</div>
 			<div class="blogList-info">
-				<span>author: <%= post.author || "" %></span>
+				<span>author: <%= users[ post.author() ].username %></span>
 				<span>permalink: <%= post.permalink || "" %></span>
 				<span>published on: <%= formatToDate(post.published_date) || "" %></span>
 				<span>published: <%= post.published %></span>

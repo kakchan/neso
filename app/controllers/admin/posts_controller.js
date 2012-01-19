@@ -16,25 +16,30 @@ action('create', function() {
 		published_date: Utils.parseDate( body.published_date ),
 		published: body.published === "on"
 	} );
-	Post.create(obj, function (err, user) {
-		if (err) {
-			flash('error', 'Post can not be created');
-			render('new', {
-				post: user,
-				title: 'New Post'
-			});
-		} else {
-			flash('info', 'Post created');
-			redirect(path_to.admin_posts);
-		}
-	});
+	User.find( req.session.user_id, function( err, user ) {
+		user.posts.create(obj, function (err, post) {
+			if (err) {
+				flash('error', 'Post can not be created');
+				render('new', {
+					post: post,
+					title: 'New Post'
+				});
+			} else {
+				flash('info', 'Post created');
+				redirect(path_to.admin_posts);
+			}
+		});
+	} );
 });
 
 action('index', function() {
 	this.title = 'Posts';
 	Post.all(function (err, posts) {
-		render({
-			posts: posts
+		User.all( function (err, users) {
+			render({
+				users: users,
+				posts: posts
+			});
 		});
 	});
 });

@@ -3,7 +3,6 @@ var Post = describe('Post', function () {
 	property('title', String);
 	property('content', String);
 	property('excerpt', String);
-	property('author', String);
 
 	property('published_date', { type: Date, "default": Date.now });
 	property('published', Boolean);
@@ -18,6 +17,9 @@ var User = describe('User', function () {
 
 User.validatesLengthOf('username', {min: 4});
 User.validatesPresenceOf('username', 'password', 'full_name');
+
+User.hasMany( Post, { as: 'posts', foreignKey: 'userId' } );
+Post.belongsTo( User, { as: 'author', foreignKey: 'userId' } );
 
 var BlockContent = describe('BlockContent', function () {
 	property('permalink', String);

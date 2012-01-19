@@ -42,9 +42,12 @@ action( 'show', function() {
 action( 'index', function() {
 	this.title = "Posts";
 	Post.all(function(err, posts) {
-		render({
-			posts: posts
-		});
+		User.all( function( err, users ) {
+			render({
+				users: users,
+				posts: posts
+			});
+		} );
 	});
 } );
 
