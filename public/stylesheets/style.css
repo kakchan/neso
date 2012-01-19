@@ -136,6 +136,7 @@ INPUT[type=button], INPUT[type=submit], INPUT[type=checkbox] { width: auto; }
 
 /* List */
 .list-row { padding: 10px; }
+FORM .list-row:hover { background-color: transparent; }
 .list-row:hover { background-color: #f4f5dc; }
 .list-title { margin: 0; }
 .list-title A { color: #333; text-decoration: none; }
