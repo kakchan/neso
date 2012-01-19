@@ -1,7 +1,7 @@
 <h1><%= post.title %></h1>
 <div class="post-info">
-	<span class="post-info-published">published: <%= post.published_date %></span>
-	<span class="post-info-author">author: <%= post.author %></span>
+	<span class="post-info-published">published: <%= formatToDate(post.published_date) || "" %></span>
+	<span class="post-info-author">author: <%= post.author || "" %></span>
 </div>
 <br/>
 <%= post.content %>
