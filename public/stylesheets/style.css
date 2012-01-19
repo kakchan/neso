@@ -135,7 +135,8 @@ INPUT[type=button], INPUT[type=submit], INPUT[type=checkbox] { width: auto; }
 .nav-list-item:hover { background-color: #e3e3e3; }
 
 /* List */
-.list-row { padding: 3px; }
+.list-row { padding: 10px; }
+.list-row:hover { background-color: #f4f5dc; }
 .list-title { margin: 0; }
 .list-title A { color: #333; text-decoration: none; }
 .list-title A:hover { text-decoration: underline; }
@@ -151,11 +152,14 @@ INPUT[type=button], INPUT[type=submit], INPUT[type=checkbox] { width: auto; }
 .blogList-excerpt { color: #222; margin-bottom: 25px; }
 
 /* Users Table */
+.table TR TD { padding: 3px 8px; }
 .table THEAD { font-weight: bold; }
+.table TBODY TR:hover { background-color: #f4f5dc; }
 .users-table { width: 100%; }
 
 /* Top Nav */
 .company-logo { padding: 15px 0 0 0; }
+.top-nav { border-bottom: 1px solid #333; padding-bottom: 10px; }
 .top-nav-right { padding: 20px 0; }
 .top-nav A { color: #333; text-decoration: none; }
 .top-nav A:hover { text-decoration: underline; }
