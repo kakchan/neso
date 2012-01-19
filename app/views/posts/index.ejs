@@ -1,12 +1,12 @@
 <div class="blogList list">
 	<% posts.forEach(function (post) { %>
 	<div class="blogList-row list-row clear-floats">
-		<div class="flow-left">
+		<div class="blogList-row-leftCell flow-left">
 			<h2 class="blogList-title list-title">
 				<a href="/<%= post.permalink %>"><%= post.title %></a>
 			</h2>
 			<div class="blogList-excerpt">
-				<span><%= post.excerpt || "" %></span>
+				<span><%- post.excerpt ? convertToHtml( post.excerpt ) : "" %></span>
 			</div>
 			<div class="blogList-info">
 				<span>author: <%= post.author || "" %></span>

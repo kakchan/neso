@@ -1,4 +1,5 @@
 var Utils = require("../../../lib/Utils");
 module.exports = {
-	formatToDate: Utils.formatToDate
+	formatToDate: Utils.formatToDate,
+	convertToHtml: Utils.convertToHtml
 };
