@@ -11,7 +11,7 @@ if (!module.parent) {
 			store: new MemoryStore( {
 				reapInterval: 600000
 			} ),
-			secret: "mimas"
+			secret: "neso"
 		} ) );
 
     app.listen(port);

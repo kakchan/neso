@@ -60,7 +60,7 @@ function run_install_scripts() {
 		}, function(err, install) {
 			render({
 				message: !err ?
-					"Congratulations! You have successfully install Mimas" :
+					"Congratulations! You have successfully install Neso" :
 					"Sorry! Installation Unsuccessful."
 			});
 		} );
@@ -76,7 +76,7 @@ action('index', function() {
 			} );
 		} else {
 			render( {
-				message: "You have successfully installed Mimas"
+				message: "You have successfully installed Neso"
 			} );
 		}
 	})

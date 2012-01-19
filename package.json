@@ -1,4 +1,4 @@
-{ "name": "mimas"
+{ "name": "neso"
 , "version": "0.0.1"
 , "engines": ["node >= 0.4.0"]
 , "main": "server.js"
@@ -13,7 +13,7 @@
   , "mime":             ">= 1.2.2"
   , "qs":               ">= 0.1.0"
 	, "ezcrypto":         "= 0.0.3"
-	, "dateformatjs":         "= 0.0.6"
+	, "dateformatjs":     "= 0.0.6"
   }
 , "scripts":
   { "test": "nodeunit test/*/*"
