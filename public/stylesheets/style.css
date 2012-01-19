@@ -128,11 +128,11 @@ INPUT[type=button], INPUT[type=submit], INPUT[type=checkbox] { width: auto; }
 .footer { margin-top: 50px; }
 
 /* Nav List */
-.nav { background-color: #f3f3f3; border-radius: 0 0 8px 8px; }
+.nav { background-color: #e0e1bc; border-radius: 0 0 8px 8px; }
 .nav-list { list-style: none; padding: 0; margin: 0; color: #333; }
 .nav-list-item { float: left; padding: 8px 20px; cursor: pointer; }
 .nav-list-item:first-child { border-radius: 0 0 0 8px; }
-.nav-list-item:hover { background-color: #e3e3e3; }
+.nav-list-item:hover { background-color: #f4f5dc; }
 
 /* List */
 .list-row { padding: 10px; }
