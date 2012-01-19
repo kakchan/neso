@@ -1,5 +1,5 @@
 HTML, BODY { margin:0; padding:0; }
-BODY { font-size: 12px; }
+BODY { font-size: 12px; font-family: Arial, Helvetica, sans-serif; }
 DIV.container { font-size: 16px; }
 H1 { color: #555; margin: 12px 0; }
 TEXTAREA { width: 820px; height: 150px; }
