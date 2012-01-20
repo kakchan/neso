@@ -27,9 +27,12 @@ action( 'showAliasContent', function() {
 		} else {
 			var post = posts[0];
 			this.title = post.title;
-			render("show", {
-				post: post
-			});
+			User.find( post.author(), function( err, user ) {
+				render("show", {
+					user: user,
+					post: post
+				});
+			} );
 		}
 	}.bind(this));
 });
