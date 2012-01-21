@@ -44,7 +44,7 @@ action( 'show', function() {
 
 action( 'index', function() {
 	this.title = "Posts";
-	Post.all(function(err, posts) {
+	Post.all({ where: { published: "true" } }, function(err, posts) {
 		User.all( function( err, users ) {
 			render({
 				users: users,
