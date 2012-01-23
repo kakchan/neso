@@ -1,5 +1,5 @@
-var Utils = require("../../lib/Utils");
+var nesoUtils = require("../../lib/neso-utils");
 module.exports = {
-	formatToDate: Utils.formatToDate,
-	convertToHtml: Utils.convertToHtml
+	formatToDate: nesoUtils.formatToDate,
+	convertToHtml: nesoUtils.convertToHtml
 };

@@ -2,18 +2,18 @@ load('application');
 before(use('requireLogin'));
 before(loadPost, {only: ['show', 'edit', 'update', 'destroy']});
 layout('admin');
-var Utils = require( "../../../lib/Utils" );
+var nesoUtils = require( "../../../lib/neso-utils" );
 
 action('new', function () {
 	this.title = 'New Post';
 	this.post = new Post;
-	this.post.published_date = Utils.formatToDate( Date.now() );
+	this.post.published_date = nesoUtils.formatToDate( Date.now() );
 	render();
 });
 
 action('create', function() {
-	var obj = Utils.merge( body, {
-		published_date: Utils.parseDate( body.published_date ),
+	var obj = nesoUtils.merge( body, {
+		published_date: nesoUtils.parseDate( body.published_date ),
 		published: body.published === "on"
 	} );
 	User.find( req.session.user_id, function( err, user ) {
@@ -25,6 +25,7 @@ action('create', function() {
 					title: 'New Post'
 				});
 			} else {
+				renameThumbnailFile( post.id );
 				flash('info', 'Post created');
 				redirect(path_to.admin_posts);
 			}
@@ -52,26 +53,27 @@ action('show', function() {
 action('edit', function() {
 	this.title = 'Post Edit';
 	render( {
-		post: Utils.merge( this.post, {
-			published_date: Utils.formatToDate( this.post.published_date )
+		post: nesoUtils.merge( this.post, {
+			published_date: nesoUtils.formatToDate( this.post.published_date )
 		} )
 	});
 });
 
 action('update', function() {
-	var obj = Utils.merge( body, {
-		published_date: Utils.parseDate( body.published_date ),
+	var obj = nesoUtils.merge( body, {
+		published_date: nesoUtils.parseDate( body.published_date ),
 		published: body.published === "on"
 	} );
 	this.post.updateAttributes(
 		obj, function (err) {
-		if (!err) {
-			flash('info', 'Post Updated');
-			redirect(path_to.admin_posts);
-		} else {
+		if (err) {
 			flash('error', 'Post can not be updated');
 			this.title = 'Edit post details';
 			render('edit');
+		} else {
+			renameThumbnailFile( this.post.id );
+			flash('info', 'Post Updated');
+			redirect(path_to.admin_posts);
 		}
 	}.bind(this));
 });
@@ -97,4 +99,9 @@ function loadPost() {
 			next();
 		}
 	}.bind(this));
+}
+
+function renameThumbnailFile( id ) {
+	var thumbnail = req.files.thumbnail;
+	fs.rename( thumbnail.path, "uploaded/posts/" + id + "." + thumbnail.name.split(".")[1] );
 }
