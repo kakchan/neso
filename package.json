@@ -1,22 +1,31 @@
-{ "name": "neso"
-, "version": "0.0.1"
-, "engines": ["node >= 0.4.0"]
-, "main": "server.js"
-, "dependencies":
-  { "ejs":       ">= 0"
-  , "ejs-ext":   ">= 0"
-  , "express":          ">= 2.2.2"
-  , "connect":          ">= 1.4.2"
-  , "railway":          ">= 0.1.6"
-  , "yaml":             ">= 0.1.2"
-  , "coffee-script":    ">= 1.1.1"
-  , "mime":             ">= 1.2.2"
-  , "qs":               ">= 0.1.0"
-	, "ezcrypto":         "= 0.0.3"
-	, "dateformatjs":     "= 0.0.6"
-	, "connect-redis":    "= 1.2.0"
-  }
-, "scripts":
-  { "test": "nodeunit test/*/*"
-  }
+{ "name": "neso",
+	"description": "Neso is a CMS system using Railway and Juggling DB",
+	"keywords": [ "CMS", "Railway CMS", "Node.js CMS" ],
+	"version": "0.0.1",
+	"engines": ["node >= 0.4.0"],
+	"main": "server.js",
+	"dependencies": {
+		"ejs":       ">= 0",
+		"ejs-ext":   ">= 0",
+		"express":          ">= 2.2.2",
+		"connect":          ">= 1.4.2",
+		"railway":          ">= 0.1.6",
+		"yaml":             ">= 0.1.2",
+		"coffee-script":    ">= 1.1.1",
+		"mime":             ">= 1.2.2",
+		"qs":               ">= 0.1.0",
+		"ezcrypto":         "= 0.0.3",
+		"dateformatjs":     "= 0.0.6",
+		"connect-redis":    "= 1.2.0",
+		"connect-form":     "= 0.2.1"
+  },
+	maintainers: [ {
+		"name": "Eric Chan",
+		"email": "kakchan@gmail.com"
+	} ],
+	repositories: [ {
+		"type": "git",
+		"url": "http://github.com/kakchan/neso.git"
+	} ],
+	"scripts": { "test": "nodeunit test/*/*" }
 }
