@@ -1,5 +1,6 @@
 <% [
 		{ name: "permalink", label: "permalink", value: post['permalink'] },
+		{ name: "thumbnail", label: "Thumbnail", type: "file" },
 		{ name: "title", label: "Title", value: post['title'] },
 		{ name: "excerpt", label: "Excerpt", type: "textarea", value: post['excerpt'] },
 		{ name: "content", label: "Content", type: "textarea", value: post['content'] },
@@ -16,6 +17,8 @@
 				<input id="<%= item.name %>" name="<%= item.name %>" type="<%= item.type %>" <%= item.value === "true" ? "checked" : "" %> />
 			<% } else if ( item.type === "date" ) { %>
 				<input id="<%= item.name %>" name="<%= item.name %>" class="ui-<%= item.type %>" date="<%= item.value %>" />
+			<% } else if ( item.type === "file" ) { %>
+				<input id="<%= item.name %>" name="<%= item.name %>" class="ui-<%= item.type || "text" %>" type="<%= item.type %>"/>
 			<% } else { %>
 				<input id="<%= item.name %>" name="<%= item.name %>" class="ui-<%= item.type || "text" %>" type="<%= item.type %>" value="<%= item.value || "" %>" />
 			<% } %>

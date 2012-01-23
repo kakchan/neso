@@ -3,6 +3,7 @@ var Post = describe('Post', function () {
 	property('title', String);
 	property('content', String);
 	property('excerpt', String);
+	property('thumbnail_filename', String);
 
 	property('published_date', { type: Date, "default": Date.now });
 	property('published', Boolean);

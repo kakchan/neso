@@ -2,7 +2,8 @@ load('application');
 before(use('requireLogin'));
 before(loadPost, {only: ['show', 'edit', 'update', 'destroy']});
 layout('admin');
-var nesoUtils = require( "../../../lib/neso-utils" );
+var nesoUtils = require( "../../../lib/neso-utils" )
+		fs = require( "fs" );
 
 action('new', function () {
 	this.title = 'New Post';
@@ -25,7 +26,7 @@ action('create', function() {
 					title: 'New Post'
 				});
 			} else {
-				renameThumbnailFile( post.id );
+				renameThumbnailFile( post );
 				flash('info', 'Post created');
 				redirect(path_to.admin_posts);
 			}
@@ -71,7 +72,7 @@ action('update', function() {
 			this.title = 'Edit post details';
 			render('edit');
 		} else {
-			renameThumbnailFile( this.post.id );
+			renameThumbnailFile( this.post );
 			flash('info', 'Post Updated');
 			redirect(path_to.admin_posts);
 		}
@@ -101,7 +102,10 @@ function loadPost() {
 	}.bind(this));
 }
 
-function renameThumbnailFile( id ) {
+function renameThumbnailFile( post ) {
 	var thumbnail = req.files.thumbnail;
-	fs.rename( thumbnail.path, "uploaded/posts/" + id + "." + thumbnail.name.split(".")[1] );
+	var filename = post.id + "." + thumbnail.name.split(".")[1];
+	fs.rename( thumbnail.path, "public/uploaded/posts/" + filename );
+	post.thumbnail_filename = filename;
+	post.save();
 }

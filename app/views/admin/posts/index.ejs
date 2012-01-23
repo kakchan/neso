@@ -7,7 +7,10 @@
 			<h2 class="blogList-title list-title">
 				<a href="<%= path_to.edit_admin_post(post) %>"><%= post.title %></a>
 			</h2>
-			<div class="blogList-excerpt">
+			<div class="blogList-thumbnailContainer flow-left">
+				<img class="blogList-thumbnail" src="/uploaded/posts/<%= post.thumbnail_filename %>" />
+			</div>
+			<div class="blogList-excerpt flow-left">
 				<span><%- post.excerpt ? convertToHtml( post.excerpt ) : "" %></span>
 			</div>
 			<div class="blogList-info">

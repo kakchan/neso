@@ -152,7 +152,9 @@ FORM .list-row:hover { background-color: transparent; }
 .blogList-row-leftCell { width: 750px; }
 .blogList-info { color: #333; }
 .blogList-info SPAN { padding-right: 25px; }
-.blogList-excerpt { color: #222; margin-bottom: 25px; }
+.blogList-excerpt { color: #222; margin-bottom: 25px; width: 560px; }
+.blogList-thumbnailContainer { width: 190px; }
+.blogList-thumbnail { max-width: 180px; max-height: 180px;}
 
 /* Users Table */
 .table TR TD { padding: 3px 8px; }
