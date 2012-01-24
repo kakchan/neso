@@ -14,7 +14,7 @@ function run_install_scripts() {
 				username: "admin",
 				password: crypto.SHA256("admin"),
 				full_name: "Administrator",
-				email: ""
+				email: "admin@neso.org"
 			}
 		],
 		Post: [
@@ -23,7 +23,8 @@ function run_install_scripts() {
 				title: "Test Post 1" ,
 				content: "Test Post 1 Content",
 				excerpt: "Test Post 1 Content Overview",
-				author: "admin",
+				thumbnail_filename: "1.png",
+				userId: 1,
 				published_date: new Date(),
 				published: true
 			},
@@ -32,7 +33,8 @@ function run_install_scripts() {
 				title: "Test Post 2",
 				content: "Test Post 2 Content",
 				excerpt: "Test Post 2 Content Overview",
-				author: "admin",
+				thumbnail_filename: "2.png",
+				userId: 1,
 				published_date: new Date(),
 				published: true
 			}
@@ -44,7 +46,7 @@ function run_install_scripts() {
 				content: "Test Block Content 1's Content"
 			},
 			{
-				permalink: "test-block-content-\2",
+				permalink: "test-block-content-2",
 				title: "Test Block Content 2",
 				content: "Test Block Content 2's Content"
 			}
