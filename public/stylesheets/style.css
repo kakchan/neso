@@ -176,3 +176,6 @@ FORM .list-row:hover { background-color: transparent; }
 /* Footer */
 .footer { border-top: 1px solid #dedede; padding: 15px 0 180px 0; }
 .footer, .footer A { color: #333; }
+
+/* Install */
+.installStatus { margin: 15px 0; }
