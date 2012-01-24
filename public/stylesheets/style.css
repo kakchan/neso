@@ -131,7 +131,7 @@ INPUT[type=button], INPUT[type=submit], INPUT[type=checkbox] { width: auto; }
 
 /* Page Style */
 .page-actions { border-top: 1px solid #999; padding: 15px 0; margin-top: 15px; }
-.content { min-height: 400px; }
+.content { min-height: 500px; }
 .footer { margin-top: 50px; }
 
 /* Nav List */
@@ -154,11 +154,12 @@ FORM .list-row:hover { background-color: transparent; }
 .blogList-row H2 { margin: 5px 0 15px 0; }
 .blogList-row:last-child { border-bottom: 0; }
 .blogList-row-leftCell { width: 750px; }
-.blogList-info { color: #333; }
+.blogList-info { color: #333; font-size: 14px; margin-bottom: 10px; margin-top: 5px; }
 .blogList-info SPAN { padding-right: 25px; }
-.blogList-excerpt { color: #222; margin-bottom: 25px; width: 560px; }
+.blogList-excerpt { color: #222; margin-bottom: 25px; margin-left: 15px; width: 520px; }
 .blogList-thumbnailContainer { width: 190px; }
 .blogList-thumbnail { max-width: 180px; max-height: 180px;}
+.blogList-preview { font-size: 14px; font-weight: normal; }
 
 /* Users Table */
 .table TR TD { padding: 3px 8px; }
@@ -173,5 +174,5 @@ FORM .list-row:hover { background-color: transparent; }
 .top-nav A:hover { text-decoration: underline; }
 
 /* Footer */
-.footer { border-top: 1px solid #dedede; padding: 15px 0; }
+.footer { border-top: 1px solid #dedede; padding: 15px 0 180px 0; }
 .footer, .footer A { color: #333; }

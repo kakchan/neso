@@ -7,13 +7,13 @@
 			</h2>
 			<div class="blogList-thumbnailContainer flow-left">
 				<img class="blogList-thumbnail" src="/uploaded/posts/<%= post.thumbnail_filename %>" />
+				<div class="blogList-info">
+					<span>by: <%= users[ post.author() ].username %></span><br/>
+					<span>on: <%= formatToDate(post.published_date) || "" %></span>
+				</div>
 			</div>
 			<div class="blogList-excerpt flow-left">
 				<span><%- post.excerpt ? convertToHtml( post.excerpt ) : "" %></span>
-			</div>
-			<div class="blogList-info">
-				<span>author: <%= users[ post.author() ].username %></span>
-				<span>published on: <%= formatToDate(post.published_date) || "" %></span>
 			</div>
 		</div>
 	</div>

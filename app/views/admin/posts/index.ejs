@@ -6,18 +6,18 @@
 		<div class="blogList-row-leftCell flow-left">
 			<h2 class="blogList-title list-title">
 				<a href="<%= path_to.edit_admin_post(post) %>"><%= post.title %></a>
+				<span class="blogList-preview"> - <a href="/<%= post.permalink || "" %>" target="_blank">preview</a></span>
 			</h2>
 			<div class="blogList-thumbnailContainer flow-left">
 				<img class="blogList-thumbnail" src="/uploaded/posts/<%= post.thumbnail_filename %>" />
+				<div class="blogList-info">
+					<span>by: <%= users[ post.author() ].username %></span><br/>
+					<span>on: <%= formatToDate(post.published_date) || "" %></span><br/>
+					<span>published: <%= post.published %></span>
+				</div>
 			</div>
 			<div class="blogList-excerpt flow-left">
 				<span><%- post.excerpt ? convertToHtml( post.excerpt ) : "" %></span>
-			</div>
-			<div class="blogList-info">
-				<span>author: <%= users[ post.author() ].username %></span>
-				<span>permalink: <%= post.permalink || "" %></span>
-				<span>published on: <%= formatToDate(post.published_date) || "" %></span>
-				<span>published: <%= post.published %></span>
 			</div>
 		</div>
 		<div class="blogList-row-rightCell flow-right">
