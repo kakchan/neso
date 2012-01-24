@@ -3,7 +3,7 @@
 	<div class="blogList-row list-row clear-floats">
 		<div class="blogList-row-leftCell flow-left">
 			<h2 class="blogList-title list-title">
-				<a href="<%= path_to.edit_admin_post(post) %>"><%= post.title %></a>
+				<a href="/<%= post.permalink %>"><%= post.title %></a>
 			</h2>
 			<div class="blogList-thumbnailContainer flow-left">
 				<img class="blogList-thumbnail" src="/uploaded/posts/<%= post.thumbnail_filename %>" />
