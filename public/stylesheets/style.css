@@ -3,8 +3,7 @@ BODY { font-size: 12px; font-family: Arial, Helvetica, sans-serif; }
 DIV.container { font-size: 16px; }
 H1 { color: #555; margin: 12px 0; }
 TEXTAREA { width: 820px; height: 150px; }
-
-.container { width: 980px; margin: 0 auto; }
+A { color: #333; }
 
 /* Shared styles */
 .flow-left { float: left; }
@@ -20,6 +19,14 @@ TEXTAREA { width: 820px; height: 150px; }
 	overflow: hidden;
 	height: 0px;
 }
+
+/* Common Styles */
+.footer A:hover, A:hover { text-decoration: underline; color: #EB8223; }
+.footer-info-container, .container { width: 980px; margin: 0 auto; }
+.footer, .table TBODY TR:hover, .list-row:hover, .nav-list-item:hover { background-color: #f9f9f9; }
+
+/* Footer Styles */
+.footer-info-container { font-size: 14px; }
 
 /* Fields styles */
 INPUT { width: 280px; padding: 3px 5px; border-radius: 5px; }
@@ -132,21 +139,18 @@ INPUT[type=button], INPUT[type=submit], INPUT[type=checkbox] { width: auto; }
 .nav-list { list-style: none; padding: 0; margin: 0; color: #333; }
 .nav-list-item { float: left; padding: 8px 20px; cursor: pointer; }
 .nav-list-item:first-child { border-radius: 0 0 0 8px; }
-.nav-list-item:hover { background-color: #f4f5dc; }
 
 /* List */
 .list-row { padding: 10px; }
 FORM .list-row:hover { background-color: transparent; }
-.list-row:hover { background-color: #f4f5dc; }
 .list-title { margin: 0; }
-.list-title A { color: #333; text-decoration: none; }
-.list-title A:hover { text-decoration: underline; }
+.list-title A { text-decoration: none; }
 .label-cell, .content-cell { float: left; }
 .label-cell { width: 130px; padding: 4px 0; }
 .content-cell { width: 300px; }
 
 /* Blog List Specific */
-.blogList-row { border-bottom: 1px solid #ddd; padding-top: 10px; padding-bottom: 15px; }
+.blogList-row { border-bottom: 1px solid #f6f6f6; padding-top: 10px; padding-bottom: 15px; }
 .blogList-row H2 { margin: 5px 0 15px 0; }
 .blogList-row:last-child { border-bottom: 0; }
 .blogList-row-leftCell { width: 750px; }
@@ -159,7 +163,6 @@ FORM .list-row:hover { background-color: transparent; }
 /* Users Table */
 .table TR TD { padding: 3px 8px; }
 .table THEAD { font-weight: bold; }
-.table TBODY TR:hover { background-color: #f4f5dc; }
 .users-table { width: 100%; }
 
 /* Top Nav */
@@ -168,3 +171,7 @@ FORM .list-row:hover { background-color: transparent; }
 .top-nav-right { padding: 20px 0; }
 .top-nav A { color: #333; text-decoration: none; }
 .top-nav A:hover { text-decoration: underline; }
+
+/* Footer */
+.footer { border-top: 1px solid #dedede; padding: 15px 0; }
+.footer, .footer A { color: #333; }
