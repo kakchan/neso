@@ -18,19 +18,24 @@ action('create', function() {
 		published: body.published === "on"
 	} );
 	User.find( req.session.user_id, function( err, user ) {
-		user.posts.create(obj, function (err, post) {
-			if (err) {
-				flash('error', 'Post can not be created');
-				render('new', {
-					post: post,
-					title: 'New Post'
-				});
-			} else {
-				renameThumbnailFile( post );
-				flash('info', 'Post created');
-				redirect(path_to.admin_posts);
-			}
-		});
+		if (err) {
+			flash('error', 'Post can not be created');
+			redirect(path_to.admin_posts);
+		} else {
+			user.posts.create(obj, function (err, post) {
+				if (err) {
+					flash('error', 'Post can not be created');
+					render('new', {
+						post: post,
+						title: 'New Post'
+					});
+				} else {
+					renameThumbnailFile( post );
+					flash('info', 'Post created');
+					redirect(path_to.admin_posts);
+				}
+			});
+		}
 	} );
 });
 
